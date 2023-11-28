@@ -1,0 +1,80 @@
+@media(max-width:1199px){
+    .header_wrapper .navbar-expand-lg .navbar-nav .nav-link{
+        padding: 0;
+        font-size: .875rem;
+    }
+}
+@media(max-width:991px){
+    section{
+        padding: 1.875rem 0;
+    }
+    .header-scrolled{
+        height: auto;
+    }
+    .header_wrapper .menu-navbar-nav{
+        text-align: center;
+        padding-bottom: .9375rem;
+    }
+    .header_wrapper .nav-item .nav-link{
+        margin-top: .9375rem;
+    }
+    .banner_wrapper{
+      height: 25.625rem;
+    }
+    .boking-area{
+      padding: 3.125em 1.875rem;
+    }
+
+    .about_wrapper{
+      padding-top: 22.375rem;
+    }
+    .room-items .room-content{
+      padding: 1rem 1.875rem;
+    }
+    .room-items .room-content h5{
+      font-size: 1.2rem;
+    }
+    .room-items .room-content p{
+      font-size: 0.50rem;
+    }
+    .rooms_wrapper .room-content table tr td{
+      margin-bottom: 5px;
+      font-size: 0.75rem;
+    }
+    
+}
+@media(max-width:767px){
+  h1{
+    font-size: 1.875rem;
+    line-height: 2.5rem;
+  }
+  h3{
+    font-size: 1.75rem;
+    line-height: 2.1875rem;
+  }
+  h5{
+    font-size: 1.25rem;
+  }
+  p{
+    font-size: .8125rem;
+    line-height: 1.5rem;
+  }
+  .footer_wrapper > div{
+    padding: 0 1.8750rem;
+  }
+  .room-items .room-content{
+    padding: 3rem 1.875rem;
+  }
+  .room-items .room-content h5{
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+  }
+  .room-items .room-content p{
+    font-size: 1rem;
+  }
+  .rooms_wrapper .room-content table tr td{
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+ 
+}
