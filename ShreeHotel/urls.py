@@ -25,9 +25,10 @@ urlpatterns = [
     path('',views.indexpage,name='index'),
     path('about/',views.aboutuspage,name='about'),
     path('contact/',views.contactpage,name='contact'),
-    # path('register',views.hendleregister,name='register'),
-    # path('login',views.handlelogin,name='handlelogin'),
-    # path('logout/',views.handlelogout,name='handlelogout')
+    path('your_booking/',views.your_bookingpage,name='your_booking'),
+    path('register',views.hendleregister,name='register'),
+    path('login',views.handlelogin,name='hendellogin'),
+    path('logout/',views.handlelogout,name='handlelogout')
 ]
 
 if settings.DEBUG:
