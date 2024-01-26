@@ -53,6 +53,9 @@ def contactpage(request):
         contact_deta.save()
     return render(request,"contact.html")
 
+def roompage(request):
+    return render(request,"room.html")
+
 def your_bookingpage(request):
     return render(request,"your_booking.html")
 

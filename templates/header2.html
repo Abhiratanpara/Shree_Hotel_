@@ -39,7 +39,7 @@
                 href="{% url 'about' %}">About Us</a>
             </li>
             <li class="nav-item mb-3 mb-lg-0">
-              <a class="nav-link me-2" href="#">Rooms</a>
+              <a class="nav-link me-2" href="{% url 'room' %}">Rooms</a>
             </li>
             <li class="nav-item mb-3 mb-lg-0">
               <a class="nav-link me-2 {% if request.path == '/contact/' %} active {% endif %}"
