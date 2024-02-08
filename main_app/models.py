@@ -42,5 +42,14 @@ class user(models.Model):
     birth=models.DateField()
     password=models.CharField(max_length=200)
     confirm_password=models.CharField(max_length=200)
+    
+class room(models.Model):
+    Room_No=models.IntegerField(max_length=5)
+    image=models.FileField(upload_to="room_img/",max_length=500)
+    room_name=models.CharField(max_length=50)
+    aboults=models.IntegerField(max_length=20)
+    children=models.IntegerField(max_length=20)
+    room_price=models.IntegerField(max_length=5)
+    
 # Create your models here.
 

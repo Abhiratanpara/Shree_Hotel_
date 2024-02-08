@@ -5,6 +5,7 @@ from main_app.models import slider
 from main_app.models import staff
 from main_app.models import category_rooms
 from main_app.models import user
+from main_app.models import room
 
 class contactadmin(admin.ModelAdmin):
     list_display=('id','name','email','message')
@@ -35,5 +36,10 @@ class useradmin(admin.ModelAdmin):
     list_display=('id','name','email','phone_no','image','address','pincode','birth','password','confirm_password')
     
 admin.site.register(user,useradmin)
+
+class roomadmin(admin.ModelAdmin):
+    list_display=('id','image','room_name','aboults','children','room_price')
+    
+admin.site.register(room,roomadmin)
 # Register your models here.
 

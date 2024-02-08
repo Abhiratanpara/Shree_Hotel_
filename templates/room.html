@@ -1,4 +1,4 @@
-<!-- {% include 'header2.html' %}  -->
+{% include 'header2.html' %} 
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 section-title text-center mb-3">
-                    <h2>Our Rooms</h2>
+                    <h2 style="margin-top: 100px;">Our Rooms</h2>
                 </div>
             </div>
         </div>
@@ -60,13 +60,14 @@
                 </div>
 
                 <div class="col-lg-9 col-md-12 px-4">
+                  {%for rdata in roomdata%}
                     <div class="card mb-4 border-0 shadow">
                         <div class="row g-0 p-3 align-items-center">
                           <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                            <img src="/static/images/room/room1.webp" id="cimg" class="img-fluid rounded"  alt="...">
+                            <img src="/media/{{rdata.image}}" id="cimg" class="img-fluid rounded"  alt="...">
                           </div>
                           <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                            <h5 class="mb-3">Simple Room Name</h5>
+                            <h5 class="mb-3">{{rdata.room_name}}</h5>
                             <div class="features mb-3">
                                 <h6 class="mb-1">Features</h6>
                                 <span class="badge rounded-pill bg-light text-dark text-wrap">
@@ -100,10 +101,10 @@
                             <div class="guests">
                                 <h6 class="mb-1">Guests</h6>
                                 <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                    5 Abults
+                                    {{rdata.aboults}} Abults
                                 </span>
                                 <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                    4 Children
+                                    {{rdata.children}} Children
                                 </span> 
                             </div>
 
@@ -111,235 +112,12 @@
                           <div class="col-md-2">
                             <div class="card-body"></div>
                               
-                            <h6 class="mb-4 ml-3 text-center mt-lg-0 mt-md-0 mt-4">$200 per night</h6>
+                            <h6 class="mb-4 ml-3 text-center mt-lg-0 mt-md-0 mt-4">${{rdata.room_price}} per night</h6>
                             <a href="#" class="main-btn rounded-2 px-lg-3 w-100" data-bs-toggle="modal" data-bs-target="#RoomBooking">Book Now</a>
                             </div>
                           </div>
                         </div>
-                        <div class="card mb-4 border-0 shadow">
-                          <div class="row g-0 p-3 align-items-center">
-                            <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                              <img src="/static/images/room/room1.webp" id="cimg" class="img-fluid rounded"  alt="...">
-                            </div>
-                            <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                              <h5 class="mb-3">Simple Room Name</h5>
-                              <div class="features mb-3">
-                                  <h6 class="mb-1">Features</h6>
-                                  <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                      2 Rooms
-                                  </span>
-                                  <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                      1 Bathroom
-                                  </span>
-                                  <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                      1 Balcony
-                                  </span>
-                                  <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                      1 Sofa
-                                  </span>
-                              </div>
-                              <div class="facilities mb-3">
-                                  <h6 class="mb-1">Facilities</h6>
-                                  <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                      Wifi
-                                  </span>
-                                  <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                      Television
-                                  </span>
-                                  <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                      AC
-                                  </span>
-                                  <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                      Room Heater
-                                  </span>
-                              </div>
-                              <div class="guests">
-                                  <h6 class="mb-1">Guests</h6>
-                                  <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                      5 Abults
-                                  </span>
-                                  <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                      4 Children
-                                  </span> 
-                              </div>
-  
-                            </div>
-                            <div class="col-md-2">
-                              <div class="card-body"></div>
-                                
-                              <h6 class="mb-4 ml-3 text-center mt-lg-0 mt-md-0 mt-4">$200 per night</h6>
-                              <a href="#" class="main-btn rounded-2 px-lg-3 w-100" data-bs-toggle="modal" data-bs-target="#RoomBooking">Book Now</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="card mb-4 border-0 shadow">
-                            <div class="row g-0 p-3 align-items-center">
-                              <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                                <img src="/static/images/room/room1.webp" id="cimg" class="img-fluid rounded"  alt="...">
-                              </div>
-                              <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                                <h5 class="mb-3">Simple Room Name</h5>
-                                <div class="features mb-3">
-                                    <h6 class="mb-1">Features</h6>
-                                    <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                        2 Rooms
-                                    </span>
-                                    <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                        1 Bathroom
-                                    </span>
-                                    <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                        1 Balcony
-                                    </span>
-                                    <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                        1 Sofa
-                                    </span>
-                                </div>
-                                <div class="facilities mb-3">
-                                    <h6 class="mb-1">Facilities</h6>
-                                    <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                        Wifi
-                                    </span>
-                                    <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                        Television
-                                    </span>
-                                    <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                        AC
-                                    </span>
-                                    <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                        Room Heater
-                                    </span>
-                                </div>
-                                <div class="guests">
-                                    <h6 class="mb-1">Guests</h6>
-                                    <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                        5 Abults
-                                    </span>
-                                    <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                        4 Children
-                                    </span> 
-                                </div>
-    
-                              </div>
-                              <div class="col-md-2">
-                                <div class="card-body"></div>
-                                  
-                                <h6 class="mb-4 ml-3 text-center mt-lg-0 mt-md-0 mt-4">$200 per night</h6>
-                                <a href="#" class="main-btn rounded-2 px-lg-3 w-100" data-bs-toggle="modal" data-bs-target="#RoomBooking">Book Now</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card mb-4 border-0 shadow">
-                              <div class="row g-0 p-3 align-items-center">
-                                <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                                  <img src="/static/images/room/room1.webp" id="cimg" class="img-fluid rounded"  alt="...">
-                                </div>
-                                <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                                  <h5 class="mb-3">Simple Room Name</h5>
-                                  <div class="features mb-3">
-                                      <h6 class="mb-1">Features</h6>
-                                      <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                          2 Rooms
-                                      </span>
-                                      <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                          1 Bathroom
-                                      </span>
-                                      <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                          1 Balcony
-                                      </span>
-                                      <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                          1 Sofa
-                                      </span>
-                                  </div>
-                                  <div class="facilities mb-3">
-                                      <h6 class="mb-1">Facilities</h6>
-                                      <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                          Wifi
-                                      </span>
-                                      <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                          Television
-                                      </span>
-                                      <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                          AC
-                                      </span>
-                                      <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                          Room Heater
-                                      </span>
-                                  </div>
-                                  <div class="guests">
-                                      <h6 class="mb-1">Guests</h6>
-                                      <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                          5 Abults
-                                      </span>
-                                      <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                          4 Children
-                                      </span> 
-                                  </div>
-      
-                                </div>
-                                <div class="col-md-2">
-                                  <div class="card-body"></div>
-                                    
-                                  <h6 class="mb-4 ml-3 text-center mt-lg-0 mt-md-0 mt-4">$200 per night</h6>
-                                  <a href="#" class="main-btn rounded-2 px-lg-3 w-100" data-bs-toggle="modal" data-bs-target="#RoomBooking">Book Now</a>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="card mb-4 border-0 shadow">
-                                <div class="row g-0 p-3 align-items-center">
-                                  <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                                    <img src="/static/images/room/room1.webp" id="cimg" class="img-fluid rounded"  alt="...">
-                                  </div>
-                                  <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                                    <h5 class="mb-3">Simple Room Name</h5>
-                                    <div class="features mb-3">
-                                        <h6 class="mb-1">Features</h6>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            2 Rooms
-                                        </span>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            1 Bathroom
-                                        </span>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            1 Balcony
-                                        </span>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            1 Sofa
-                                        </span>
-                                    </div>
-                                    <div class="facilities mb-3">
-                                        <h6 class="mb-1">Facilities</h6>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            Wifi
-                                        </span>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            Television
-                                        </span>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            AC
-                                        </span>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            Room Heater
-                                        </span>
-                                    </div>
-                                    <div class="guests">
-                                        <h6 class="mb-1">Guests</h6>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            5 Abults
-                                        </span>
-                                        <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                            4 Children
-                                        </span> 
-                                    </div>
-        
-                                  </div>
-                                  <div class="col-md-2">
-                                    <div class="card-body"></div>
-                                      
-                                    <h6 class="mb-4 ml-3 text-center mt-lg-0 mt-md-0 mt-4">$200 per night</h6>
-                                    <a href="#" class="main-btn rounded-2 px-lg-3 w-100" data-bs-toggle="modal" data-bs-target="#RoomBooking">Book Now</a>
-                                    </div>
-                                  </div>
-                                </div>
+                  {%endfor%}
                         
                  </div>
                  
@@ -347,6 +125,9 @@
             </div>
         </div>
 
+<!-- roombooking model  -->
+
+         
         <div class="modal fade" id="RoomBooking" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog  modal-lg">
@@ -374,8 +155,28 @@
                       <input type="number" class="form-control shadow-none" name="phone" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                      <label class="form-label">Email</label>
-                      <input type="email" class="form-control shadow-none" name="email" required>
+                      <label class="form-label">City</label>
+                      <input type="text" class="form-control shadow-none" name="city" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Adulte</label>
+                      <select name="" id="" class="form-select mb-3">
+                        <!-- <option selected>Adulte</option> -->
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4+">4+</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Children</label>
+                      <select name="" id="" class="form-select mb-3">
+                        <!-- <option selected>Children</option> -->
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4+">4+</option>
+                      </select>
                     </div>
                     <div class="col-md-6 mb-3">
                       <label class="form-label">Check-in</label>

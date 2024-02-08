@@ -8,10 +8,12 @@ from main_app.admin import services
 from main_app.admin import slider
 from main_app.admin import staff
 from main_app.admin import category_rooms
+from main_app.admin import room
 
 def indexpage(request):
         
     sliderdata =slider.objects.all()
+    
     
     staffdata=staff.objects.all()
     
@@ -54,7 +56,12 @@ def contactpage(request):
     return render(request,"contact.html")
 
 def roompage(request):
-    return render(request,"room.html")
+    roomdata=room.objects.all()
+    
+    data={
+        'roomdata':roomdata
+     }
+    return render(request,"room.html" ,data)
 
 def your_bookingpage(request):
     return render(request,"your_booking.html")
