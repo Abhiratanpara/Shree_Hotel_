@@ -29,7 +29,7 @@ urlpatterns = [
     path('your_booking/',views.your_bookingpage,name='your_booking'),
     path('register',views.hendleregister,name='register'),
     path('login',views.handlelogin,name='hendellogin'),
-    path('logout/',views.handlelogout,name='handlelogout')
+    path('logout/',views.handlelogout,name='handlelogout'),
 ]
 
 if settings.DEBUG:

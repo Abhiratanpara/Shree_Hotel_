@@ -1,4 +1,4 @@
-from django.http import HttpResponse 
+from django.http import HttpResponse ,HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.shortcuts import render , redirect
 from django.contrib.auth import authenticate,login,logout
@@ -9,7 +9,7 @@ from main_app.admin import slider
 from main_app.admin import staff
 from main_app.admin import category_rooms
 from main_app.admin import room
-
+from main_app.admin import booking
 def indexpage(request):
         
     sliderdata =slider.objects.all()
@@ -56,15 +56,34 @@ def contactpage(request):
     return render(request,"contact.html")
 
 def roompage(request):
-    roomdata=room.objects.all()
+    if request.method=='POST':
+        name=request.POST.get('name')    
+        email=request.POST.get('email')
+        phone=request.POST.get('phone')
+        city=request.POST.get('city')
+        adulte=request.POST.get('adulte')
+        children=request.POST.get('children')
+        check_in=request.POST.get('check_in')
+        check_out=request.POST.get('check_out')
+        booking_data=booking(name=name,email=email,phone=phone,city=city,adulte=adulte,children=children,check_in=check_in,check_out=check_out)
+        booking_data.save()
+        return render(request,"your_booking.html")
     
+    roomdata=room.objects.all()
     data={
         'roomdata':roomdata
      }
     return render(request,"room.html" ,data)
 
 def your_bookingpage(request):
-    return render(request,"your_booking.html")
+    # if request.session.has_key('uid'):
+        bookingdata =booking.objects.all()
+        data = {
+            "bookingdata" : bookingdata,
+        }
+        return render(request,"your_booking.html",data)
+    # else:
+        # return redirect('about')
 
 
 def hendleregister(request):
@@ -102,6 +121,7 @@ def handlelogin(request):
         
         if user is not None:
             login(request,user)
+            # request.session["uid"]=request.POST.get["loginusername"]
             messages.success(request,"login")
             return redirect('index')
         else:
@@ -112,5 +132,6 @@ def handlelogin(request):
 
 def handlelogout(request):
         logout(request)
+        # del request.session["uid"]
         messages.success(request,"logout success")
         return redirect('index')

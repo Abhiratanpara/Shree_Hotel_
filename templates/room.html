@@ -138,10 +138,10 @@
               <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form action="/register" method="post">
-                {% csrf_token %}
+              <form action="{% url 'room' %}" method="post">
                 <div class="container-fluid">
-                  <div class="row">
+                  {% csrf_token %}
+                  <div class="row">  
                     <div class="col-md-6 mb-3">
                       <label class="form-label">Name</label>
                       <input type="text" class="form-control shadow-none" name="name" required>
@@ -160,7 +160,7 @@
                     </div>
                     <div class="col-md-6 mb-3">
                       <label class="form-label">Adulte</label>
-                      <select name="" id="" class="form-select mb-3">
+                      <select name="adulte" id="" class="form-select mb-3">
                         <!-- <option selected>Adulte</option> -->
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
@@ -170,9 +170,9 @@
                     </div>
                     <div class="col-md-6 mb-3">
                       <label class="form-label">Children</label>
-                      <select name="" id="" class="form-select mb-3">
-                        <!-- <option selected>Children</option> -->
-                        <option value="1" selected>1</option>
+                      <select name="children" id="" class="form-select mb-3">
+                        <option selected value="0">0</option>
+                        <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4+">4+</option>
@@ -180,11 +180,11 @@
                     </div>
                     <div class="col-md-6 mb-3">
                       <label class="form-label">Check-in</label>
-                      <input type="date" class="form-control shadow-none" name="password" required>
+                      <input type="date" class="form-control shadow-none" name="check_in" required>
                     </div>
                     <div class="col-md-6 mb-3">
                       <label class="form-label">Check-out</label>
-                      <input type="date" class="form-control shadow-none" name="confirm_password" required>
+                      <input type="date" class="form-control shadow-none" name="check_out" required>
                     </div>
                   </div>
                 </div>
