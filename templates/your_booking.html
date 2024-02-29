@@ -11,6 +11,17 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/about-us.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        #img{
+            width: 80px;
+            height: 80px;
+            padding: 5px;
+        }
+        td{
+            font-size: 20px;
+        }
+        
+    </style>
 </head>
 
 <body>
@@ -28,29 +39,35 @@
                             <tr>
                                 <th>Our_room</th>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>phone</th>
-                                <th>City</th>
+                                <!-- <th>Email</th> -->
+                                <!-- <th>phone</th> -->
+                                <!-- <th>City</th> -->
                                 <th>Adulte</th>
                                 <th>Children</th>
                                 <th>check_in</th>
                                 <th>check_out</th>
                                 <th>Room_No</th>
+                                <th>Cancel Booking</th>
                             </tr>
                         </thead>
                         <tbody>
                   {%for bdata in bookingdata%}
-                            <tr>
-                                <td></td>
+                            <tr class="text-center">
+                                <td><img src="/media/{{bdata.Room_No.image}}" id="img"/></td>
                                 <td>{{bdata.name}}</td>
-                                <td>{{bdata.email}}</td>
-                                <td>{{bdata.phone}}</td>
-                                <td>{{bdata.city}}</td>
+                                <!-- <td>{{bdata.email}}</td> -->
+                                <!-- <td>{{bdata.phone}}</td> -->
+                                <!-- <td>{{bdata.city}}</td> -->
                                 <td>{{bdata.adulte}}</td>
                                 <td>{{bdata.children}}</td>
                                 <td>{{bdata.check_in}}</td>
                                 <td>{{bdata.check_out}}</td>
-                                <td>{{bdata.Room_No}}</td>
+                                <td>{{bdata.Room_No.Room_No}}</td>
+                                <td>
+                                    <form action="{% url 'deleteBooking' bdata.id %}">
+                                        <input type="submit" value="Cancel Booking" readonly class="btn btn-outline-danger">
+                                    </form>
+                                </td>
                             </tr>
                             {% endfor %}
                         </tbody>

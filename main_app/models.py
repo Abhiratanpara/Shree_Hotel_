@@ -32,18 +32,6 @@ class category_rooms(models.Model):
     people_Capacity=models.IntegerField(max_length=3)
     room_price=models.IntegerField(max_length=10)
     
-# class user(models.Model):
-#     name=models.CharField(max_length=50)
-#     email=models.EmailField(max_length=100)
-#     phone_no=models.BigIntegerField(max_length=12)
-#     image=models.FileField(upload_to="user_img/",max_length=500,null=True,default=None)
-#     address=models.TextField()
-#     pincode=models.BigIntegerField(max_length=6)
-#     birth=models.DateField()
-#     password=models.CharField(max_length=200)
-#     confirm_password=models.CharField(max_length=200)
-    
-    
     
 # class room(models.Model):
 #     room_no = models.IntegerField()
@@ -82,7 +70,7 @@ class booking(models.Model):
     children=models.IntegerField(max_length=5)
     check_in=models.DateField()     
     check_out=models.DateField()
-    Room_No=models.ForeignKey(room,on_delete=models.CASCADE)   
+    Room_No=models.ForeignKey(room,on_delete=models.CASCADE,default=1)   
     
     @property 
     def RoomNo(self):

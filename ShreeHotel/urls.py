@@ -30,6 +30,7 @@ urlpatterns = [
     path('register',views.hendleregister,name='register'),
     path('login',views.handlelogin,name='hendellogin'),
     path('logout/',views.handlelogout,name='handlelogout'),
+    path('deleteBooking/<int:id>',views.deleteBooking ,name='deleteBooking'),
 ]
 
 if settings.DEBUG:

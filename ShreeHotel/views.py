@@ -67,7 +67,7 @@ def roompage(request):
         check_out=request.POST.get('check_out')
         booking_data=booking(name=name,email=email,phone=phone,city=city,adulte=adulte,children=children,check_in=check_in,check_out=check_out)
         booking_data.save()
-        return render(request,"your_booking.html")
+        return redirect("your_booking")
     
     roomdata=room.objects.all()
     data={
@@ -135,3 +135,8 @@ def handlelogout(request):
         # del request.session["uid"]
         messages.success(request,"logout success")
         return redirect('index')
+
+def deleteBooking(request,id):
+    dele=booking.objects.get(id=id)
+    dele.delete()
+    return redirect('your_booking')
